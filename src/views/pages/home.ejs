@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéFinder</title>
+    <link rel="icon" href="/images/pokeball.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <%- include("../partials/header") %>
+
+    <main id="main" role="main">
+      <section class="result-section">
+        <% if (!pokemon) { %>
+        <p>Search for a Pokémon to see its details here :)</p>
+        <% } %> <% if (pokemon) { %>
+        <div class="info-container">
+          <div class="pokemon-image">
+            <img src="<%= image %>" alt="<%= pokemon %>" />
+          </div>
+          <div class="pokemon-info">
+            <p class="poke-string">
+              Pokémon: <%= pokemon.charAt(0).toUpperCase() + pokemon.slice(1) %>
+            </p>
+            <p class="poke-string">
+              Type: <%= type.charAt(0).toUpperCase() + type.slice(1) %>
+            </p>
+          </div>
+        </div>
+        <% } %> <% if (error) { %>
+        <div class="error-message"><%= error %></div>
+        <% } %>
+      </section>
+
+      <section class="search-section">
+        <form action="/" method="POST" class="search-form">
+          <input
+            type="text"
+            name="pokemonName"
+            placeholder="Pokémon name"
+            required
+          />
+          <button type="submit">Search</button>
+        </form>
+      </section>
+    </main>
+
+    <%- include("../partials/footer") %>
+  </body>
+</html>
