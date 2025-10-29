@@ -6,43 +6,69 @@
     <title>PokéFinder</title>
     <link rel="icon" href="/images/pokeball.png" type="image/x-icon" />
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <%- include("../partials/header") %>
 
     <main id="main" role="main">
       <section class="result-section">
-        <% if (!pokemon) { %>
-        <p>Search for a Pokémon to see its details here :)</p>
-        <% } %> <% if (pokemon) { %>
-        <div class="info-container">
-          <div class="pokemon-image">
-            <img src="<%= image %>" alt="<%= pokemon %>" />
+        <div class="app-container">
+          <div class="title-container">
+            <h1 id="main-title">PokéFinder</h1>
+            <h2 id="sub-title">
+              Search for a Pokémon to see its details here :)
+            </h2>
           </div>
-          <div class="pokemon-info">
-            <p class="poke-string">
-              Pokémon: <%= pokemon.charAt(0).toUpperCase() + pokemon.slice(1) %>
-            </p>
-            <p class="poke-string">
-              Type: <%= type.charAt(0).toUpperCase() + type.slice(1) %>
-            </p>
-          </div>
-        </div>
-        <% } %> <% if (error) { %>
-        <div class="error-message"><%= error %></div>
-        <% } %>
-      </section>
 
-      <section class="search-section">
-        <form action="/" method="POST" class="search-form">
-          <input
-            type="text"
-            name="pokemonName"
-            placeholder="Pokémon name"
-            required
-          />
-          <button type="submit">Search</button>
-        </form>
+          <div class="info-container">
+            <% if (!pokemon) { %>
+            <div class="image-container">
+              <img
+                id="pokeball-animation"
+                src="/images/pokeball-animation.gif"
+                alt="pokeball"
+              />
+            </div>
+            <% } %> <% if (pokemon) { %>
+            <div class="image-container">
+              <img id="pokemon-image" src="<%= image %>" alt="<%= pokemon %>" />
+            </div>
+            <div class="stats-container">
+              <p class="stats-p">
+                Pokémon Name: <%= pokemon.charAt(0).toUpperCase() +
+                pokemon.slice(1) %>
+              </p>
+              <p class="stats-p">
+                Pokémon Type: <%= type.charAt(0).toUpperCase() + type.slice(1)
+                %>
+              </p>
+            </div>
+            <% } %>
+          </div>
+          <% if (error) { %>
+          <div class="stats-container">
+            <p class="stats-p"><%= error %></p>
+          </div>
+          <% } %>
+        </div>
+
+        <div class="form-container">
+          <form action="/" method="POST" class="search-form">
+            <input
+              type="text"
+              name="pokemonName"
+              placeholder="Pokémon name"
+              required
+            />
+            <button type="submit">Search</button>
+          </form>
+        </div>
       </section>
     </main>
 
