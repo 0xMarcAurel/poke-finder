@@ -28,7 +28,7 @@
 
           <div class="info-container">
             <% if (!pokemon) { %>
-            <div class="image-container">
+            <div class="pokeball-container">
               <img
                 id="pokeball-animation"
                 src="/images/pokeball-animation.gif"
@@ -41,19 +41,19 @@
             </div>
             <div class="stats-container">
               <p class="stats-p">
-                Pokémon Name: <%= pokemon.charAt(0).toUpperCase() +
-                pokemon.slice(1) %>
+                <span class="label">Name: </span><%-
+                pokemon.charAt(0).toUpperCase() + pokemon.slice(1) %>
               </p>
               <p class="stats-p">
-                Pokémon Type: <%= type.charAt(0).toUpperCase() + type.slice(1)
-                %>
+                <span class="label">Type: </span><%-
+                type.charAt(0).toUpperCase() + type.slice(1) %>
               </p>
             </div>
             <% } %>
           </div>
           <% if (error) { %>
           <div class="stats-container">
-            <p class="stats-p"><%= error %></p>
+            <p id="error-message"><%= error %></p>
           </div>
           <% } %>
         </div>
@@ -61,17 +61,19 @@
         <div class="form-container">
           <form action="/" method="POST" class="search-form">
             <input
+              id="form-input"
               type="text"
               name="pokemonName"
               placeholder="Pokémon name"
               required
             />
-            <button type="submit">Search</button>
+            <button id="submit-btn" type="submit">Search</button>
           </form>
         </div>
       </section>
     </main>
 
     <%- include("../partials/footer") %>
+    <script src="/js/main.js"></script>
   </body>
 </html>
