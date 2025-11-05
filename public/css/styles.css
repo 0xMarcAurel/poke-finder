@@ -113,7 +113,7 @@ body {
 
 .stats-p {
   color: var(--secondary);
-  margin: 5px;
+  margin: 10px;
   text-wrap: nowrap;
 }
 
@@ -189,7 +189,7 @@ body {
   color: var(--light);
 }
 
-/* !! next: header & more data !! */
+/* !! next: header !! */
 
 /* media queries */
 

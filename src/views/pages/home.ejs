@@ -48,6 +48,16 @@
                 <span class="label">Type: </span><%-
                 type.charAt(0).toUpperCase() + type.slice(1) %>
               </p>
+              <p class="stats-p">
+                <span class="label">Height: </span><%= (height /
+                10).toLocaleString('en-US', { minimumFractionDigits: 1,
+                maximumFractionDigits: 1 }) %> m
+              </p>
+              <p class="stats-p">
+                <span class="label">Weight: </span><%= (weight /
+                10).toLocaleString('en-US', { minimumFractionDigits: 1,
+                maximumFractionDigits: 1 }) %> kg
+              </p>
             </div>
             <% } %>
           </div>

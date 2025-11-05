@@ -36,11 +36,15 @@ app.post("/", async (req, res) => {
       name: data.name,
       type: data.types[0].type.name,
       image: data.sprites.other["official-artwork"].front_default,
+      height: data.height,
+      weight: data.weight,
     };
     res.render("pages/home", {
       pokemon: pokemon.name,
       type: pokemon.type,
       image: pokemon.image,
+      height: pokemon.height,
+      weight: pokemon.weight,
       error: null,
     });
   } catch (error) {
@@ -50,6 +54,8 @@ app.post("/", async (req, res) => {
       pokemon: null,
       type: null,
       image: null,
+      height: null,
+      weight: null,
       error: "Pokemon not found. Please try again!",
     });
   }
