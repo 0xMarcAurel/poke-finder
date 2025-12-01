@@ -26,6 +26,10 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/about", (req, res) => {
+  res.render("pages/about");
+});
+
 app.post("/", async (req, res) => {
   const pokemonName = req.body.pokemonName.toLowerCase();
 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokéFinder</title>
+    <link rel="icon" href="/images/pokeball.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <%- include("../partials/header") %>
+
+    <main main id="main" role="main">
+      <section class="about-section">
+        <div class="app-container">
+          <div class="title-container">
+            <h1 id="main-title">About this app</h1>
+          </div>
+          <div class="about-container">
+            <p class="about-p">
+              This tool gives you a quick, easy way to look up Pokémon data
+              through the
+              <a
+                href="https://pokeapi.co/"
+                rel="noopener noreferrer"
+                target="_blank"
+                id="pokeapi-link"
+                >PokéAPI</a
+              >. It contains the information you need, displayed cleanly.
+            </p>
+            <p class="about-p">
+              I built this project while learning full-stack development. The
+              goal was to create a small, fast, and reliable interface to
+              explore API data.
+            </p>
+            <p class="about-p">What this app does:</p>
+            <ul class="about-list">
+              <li>Search any Pokémon by name</li>
+              <li>See types, height, weight and sprites</li>
+              <li>
+                Enjoy a lightweight UI that works on both desktop and mobile
+              </li>
+              <li>
+                Benefit from a Node.js backend that keeps everything concise
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include("../partials/footer") %>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

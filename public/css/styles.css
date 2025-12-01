@@ -172,7 +172,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  padding: 40px 10px;
 }
 
 .footer-container p {
@@ -187,6 +187,31 @@ body {
 }
 
 .twitter-username:hover {
+  color: var(--light);
+}
+
+/* about page */
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-bottom: 0;
+  text-align: left;
+  text-transform: none;
+  line-height: 1.5;
+  font-size: clamp(14px, 2vw, 16px);
+}
+
+.about-p {
+  margin: 20px 0px;
+}
+
+#pokeapi-link {
+  text-decoration: none;
+  color: var(--secondary);
+}
+
+#pokeapi-link:hover {
   color: var(--light);
 }
 
