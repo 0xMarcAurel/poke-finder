@@ -25,7 +25,7 @@ App built with Express and EJS, using data from the public [PokéAPI](https://po
 
 ## Installation
 ### 1. Clone the repository
-`git clone https://github.com/your-username/poke-finder.git`
+`git clone https://github.com/your-username/pokefinder.git`
 ### 2. Install dependencies
 `npm install`
 ### 3. Run the server
@@ -35,3 +35,4 @@ App built with Express and EJS, using data from the public [PokéAPI](https://po
 
 ## License
 This project is licensed under the MIT License.
+
